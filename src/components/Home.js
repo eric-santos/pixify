@@ -1,7 +1,14 @@
 import React from "react";
+import { Container } from "semantic-ui-react";
+
+import ImagePlayer from "../components/ImagePlayer.js";
 
 const Home = () => {
-  return <img src="/public/images/dock.jpg" alt="" />;
+  return (
+    <Container>
+      <ImagePlayer />
+    </Container>
+  );
 };
 
 export default Home;
