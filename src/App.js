@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar.js";
 
 const Home = lazy(() => import("./components/Home.js"));
-const About = lazy(() => import("./components/About.js"));
+const Messages = lazy(() => import("./components/Messages.js"));
+const Profile = lazy(() => import("./components/Profile.js"));
 
 const App = () => (
   <Router>
@@ -12,7 +13,8 @@ const App = () => (
       <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
+        <Route path="/messages" component={Messages} />
+        <Route path="/profile" component={Profile} />
       </Switch>
     </Suspense>
   </Router>
