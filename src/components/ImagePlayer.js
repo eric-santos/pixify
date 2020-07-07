@@ -7,30 +7,28 @@ const CustomDotGroup = lazy(() => import("./CustomDotGroup"));
 
 const ImagePlayer = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <Container style={{ margin: "75px 0px" }}>
-        <CarouselProvider
-          naturalSlideWidth={100}
-          naturalSlideHeight={60}
-          totalSlides={3}
-        >
-          <Slider>
-            <Slide index={0}>
-              <Image src="/images/dock.jpg" alt="dock" fluid centered />
-              <a href="https://www.pexels.com">Photos provided by Pexels</a>
-            </Slide>
-            <Slide index={1}>
-              <Image src="/images/woman.jpg" alt="dock" fluid centered />
-            </Slide>
-            <Slide index={2}>
-              <Image src="/images/close-up.jpg" alt="dock" fluid centered />
-            </Slide>
-          </Slider>
-          <Divider />
-          <CustomDotGroup slides={3} />
-        </CarouselProvider>
-      </Container>
-    </Suspense>
+    <Container style={{ margin: "75px 0px" }}>
+      <CarouselProvider
+        naturalSlideWidth={100}
+        naturalSlideHeight={60}
+        totalSlides={3}
+      >
+        <Slider>
+          <Slide index={0}>
+            <Image src="/images/dock.jpg" alt="dock" fluid centered />
+            <a href="https://www.pexels.com">Photos provided by Pexels</a>
+          </Slide>
+          <Slide index={1}>
+            <Image src="/images/woman.jpg" alt="dock" fluid centered />
+          </Slide>
+          <Slide index={2}>
+            <Image src="/images/close-up.jpg" alt="dock" fluid centered />
+          </Slide>
+        </Slider>
+        <Divider />
+        <CustomDotGroup slides={3} />
+      </CarouselProvider>
+    </Container>
   );
 };
 
