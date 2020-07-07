@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { Container, Icon, Image, Menu } from "semantic-ui-react";
 
 const Navbar = () => {
