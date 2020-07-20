@@ -1,19 +1,27 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+const baseURL = (query) =>
+  `${process.env.REACT_APP_PEXELS_BASE_URL}search?query=${query}&Authorization=${process.env.REACT_APP_PEXELS_AUTHORIZATION}`;
+
+const headers = {
+  Authorization: `${process.env.REACT_APP_PEXELS_AUTHORIZATION}`,
+};
+
 const instance = axios.create({
-  baseURL: "https://api.pexels.com/v1/search?query=people",
-  timeout: 1000,
-  headers: { Authorization: `${process.env.REACT_APP_API_KEY}` },
+  baseURL: baseURL("dogs"),
+  headers,
 });
 
 const PexelSlider = () => {
-  // const [photos, setPhotos] = useState();
+  const [photos, setPhotos] = useState([]);
 
   useEffect(() => {
     instance
       .get()
-      .then((response) => console.log(response))
+      .then((response) => {
+        setPhotos(response.data.photos);
+      })
 
       .catch(function (error) {
         // handle error
@@ -24,6 +32,16 @@ const PexelSlider = () => {
   return (
     <div>
       <h1>PexelSlider</h1>
+      {photos.map((p, k) => {
+        return (
+          <img
+            src={p.src.large}
+            key={k}
+            alt="dogs"
+            style={{ height: "40rem", width: "auto" }}
+          />
+        );
+      })}
     </div>
   );
 };
