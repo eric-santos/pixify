@@ -1,12 +1,7 @@
-import React, { Fragment } from "react";
-import ReactPlayer from "react-player/lazy";
+import React from "react";
 
 const Profile = () => {
-  return (
-    <Fragment>
-      <ReactPlayer url="https://www.youtube.com/watch?v=ysz5S6PUM-U" />
-    </Fragment>
-  );
+  return <div>Profile </div>;
 };
 
 export default Profile;

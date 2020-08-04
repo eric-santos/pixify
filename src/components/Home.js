@@ -1,14 +1,12 @@
 import React from "react";
 import { Container } from "semantic-ui-react";
 
-import ImagePlayer from "../components/ImagePlayer.js";
-import PexelSlider from "./PexelSlider.js";
+import Carousel from "./Carousel.js";
 
 const Home = () => {
   return (
     <Container>
-      <ImagePlayer />
-      <PexelSlider />
+      <Carousel />
     </Container>
   );
 };
