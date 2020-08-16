@@ -37,18 +37,25 @@ const PexelSlider = () => {
         itemsToShow={1}
         disableArrowsOnEnd={true}
         enableSwipe={true}
-        autoPlaySpeed={15000}
+        autoPlaySpeed={25000}
         enableAutoPlay={true}
         showArrows={false}
       >
-        {photos.map((p) => {
+        {photos.map((p, k, i) => {
           return (
-            <Image
-              style={{ height: "100vh", width: "auto" }}
-              src={p.src.original}
-              key={p.id}
-              alt="nature"
-            />
+            <div key={k}>
+              <Image
+                style={{ height: "100vh", width: "auto" }}
+                src={p.src.original}
+                key={i}
+                alt="nature"
+              />
+              <a href={p.photographer_url} alt="photographer">
+                <h1 style={{ color: "#08d9d6" }}>
+                  Photographer: {p.photographer}
+                </h1>
+              </a>
+            </div>
           );
         })}
       </Carousel>

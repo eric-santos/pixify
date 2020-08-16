@@ -4,9 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar.js";
 
 const Home = lazy(() => import("./components/Home.js"));
-const Messages = lazy(() => import("./components/Messages.js"));
-const Profile = lazy(() => import("./components/Profile.js"));
-const Slider = lazy(() => import("./components/PexelSlider.js"));
+const ImageModal = lazy(() => import("./components/ImageModal.js"));
 
 const App = () => (
   <Router>
@@ -14,9 +12,7 @@ const App = () => (
       <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/messages" component={Messages} />
-        <Route path="/profile" component={Profile} />
-        <Route path="/slider" component={Slider} />
+        <Route exact path="/imageModal" component={ImageModal} />
       </Switch>
     </Suspense>
   </Router>
