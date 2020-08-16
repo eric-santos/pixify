@@ -1,14 +1,8 @@
 import React from "react";
-import { Container } from "semantic-ui-react";
-
-import Carousel from "./Carousel.js";
+import PexelSlider from "./PexelSlider";
 
 const Home = () => {
-  return (
-    <Container>
-      <Carousel />
-    </Container>
-  );
+  return <PexelSlider />;
 };
 
 export default Home;
